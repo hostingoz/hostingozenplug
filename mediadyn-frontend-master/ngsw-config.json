@@ -1,0 +1,33 @@
+{
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/*.css",
+          "/*.js",
+          "/*.mp4",
+          "/*.avi",
+          "/**/*.mp4",
+          "/**/*.avi",
+          "/**/*.mpeg",
+          "/*.mpeg"
+        ]
+      }
+    }, {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|mp4|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ]
+}
