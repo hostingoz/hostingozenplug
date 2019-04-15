@@ -1,0 +1,118 @@
+#textboxid
+{
+    margin-top: 14px;
+    width: 208px;
+    height: 38px;
+    border-radius: 6px; 
+    right: 38px;
+    position: relative;
+}
+
+
+#select
+{
+    border-radius: 10px;
+    color: white;
+    padding: 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #008CBA;
+    margin-top: 10px;
+    left: -206px;
+    position: relative;
+    top: 92px;
+    height: 36px;
+
+}
+
+#select-upload
+{
+    border-radius: 10px;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #008CBA;
+    margin-top: 5px;
+    width: 95px;
+}
+
+
+
+
+#header{
+    color: #008CBA;
+}
+
+.file-field.big .file-path-wrapper {
+    height: 3.2rem; }
+    .file-field.big .file-path-wrapper .file-path {
+    height: 3rem; }
+
+.info{
+       
+        background-color: #008CBA;
+}    
+
+.main-div{
+    /* margin-top: 400px; */
+    /* margin-left:  300px; */
+    background-color: #5bc0de;
+    width: 460px;
+    border-radius: 9px;
+    height: 194px;
+
+
+}
+
+.input-field{
+    top: 56px;
+    /* position: relative; */
+    left: -9px;
+    height: unset;
+    width: 213px;
+}
+
+
+
+.choose{
+    /* left: 115px; */
+    top: 118px;
+    left: 78px;
+    /* left: 102px; */
+    position: absolute;
+    /* height: 46px; */
+    width: 206px;
+    width: 206px;
+    /* width: 206px; */
+    font-size: 16px;
+    border-radius: 4px;
+    background: blanchedalmond;
+}
+
+.inner-div{
+    text-align:center ; 
+    width: 402px;
+    height: 211px;left: 500px;
+}
+
+.outer-div{
+    background-color: aqua;
+}
+
+
+#textboxid1
+{
+    margin-top: 14px;
+    width: 208px;
+    height: 38px;
+    border-radius: 6px; 
+}
