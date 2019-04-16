@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "http://localhost:4200",
+    "target": "https://theenplugapp.com",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true

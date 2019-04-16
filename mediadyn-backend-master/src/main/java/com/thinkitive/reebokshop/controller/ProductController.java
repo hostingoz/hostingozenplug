@@ -113,6 +113,7 @@ public class ProductController {
 			triggerTemp.put("triggered", triggeredProduct.isTriggered());
 			triggerTemp.put("duration", triggeredProduct.getDuration());
 			triggerTemp.put("fileType",triggeredProduct.getFileType());
+			triggerTemp.put("productName",triggeredProduct.getProductName());
 		
 			System.out.println("Response triggred Product to be sent" +triggerTemp);
 			return ResponseEntity.ok().body(triggerTemp.toString());
@@ -137,6 +138,7 @@ public class ProductController {
 			triggerTemp.put("triggered", triggeredProduct.isTriggered());
 			triggerTemp.put("duration", triggeredProduct.getDuration());
 			triggerTemp.put("fileType",triggeredProduct.getFileType());
+			triggerTemp.put("productName",triggeredProduct.getProductName());
 		
 			System.out.println("Response triggred Product to be sent" +triggerTemp);
 			return ResponseEntity.ok().body(triggerTemp.toString());
@@ -159,6 +161,7 @@ public class ProductController {
 			triggerTemp.put("triggered", triggeredProduct.isTriggered());
 			triggerTemp.put("duration", triggeredProduct.getDuration());
 			triggerTemp.put("fileType",triggeredProduct.getFileType());
+			triggerTemp.put("productName",triggeredProduct.getProductName());
 		
 			System.out.println("Response triggred Product to be sent" +triggerTemp);
 			return ResponseEntity.ok().body(triggerTemp.toString());
@@ -181,6 +184,7 @@ public class ProductController {
 			triggerTemp.put("triggered", triggeredProduct.isTriggered());
 			triggerTemp.put("duration", triggeredProduct.getDuration());
 			triggerTemp.put("fileType",triggeredProduct.getFileType());
+			triggerTemp.put("productName",triggeredProduct.getProductName());
 		
 			System.out.println("Response triggred Product to be sent" +triggerTemp);
 			return ResponseEntity.ok().body(triggerTemp.toString());

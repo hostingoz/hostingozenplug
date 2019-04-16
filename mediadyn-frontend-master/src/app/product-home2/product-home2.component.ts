@@ -26,7 +26,7 @@ export class ProductHome2Component implements OnInit {
 
    bSubject = new BehaviorSubject({}); 
 
-   interval =2000;
+   interval =5000;
   constructor(private http: HttpClient, private elRef: ElementRef) {
 
     
@@ -51,25 +51,44 @@ export class ProductHome2Component implements OnInit {
   }
 
   ngOnInit() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+      .register('ngsw-worker.js');
+    }
 
   }
 
   get() {
 
     let that = this;
-      this.http.get('http://localhost:8080/api/getTriggeredProduct/q2').subscribe(res => {
+      this.http.get('https://theenplugapp.com/api/getTriggeredProduct/q2').subscribe(res => {
       console.log('res', res);
       this.display = false;
       let result = res as any;
+
+        //let searchParams = new URLSearchParams(window.location.search);
+        let searchParams =  window.location.href;
+        console.log('searchParams:: '+searchParams);
+  
+        if(res == null){
+          let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+          window.history.pushState({path:newurl},'',newurl);
+        }
+  
      
 
       if(!result || result.name == null){
         this.isVideo=false;
         this.isImage=false;
-        this.interval = 2000;
+        this.interval = 5000;
 
-        this.display = true;
+        
       } else {
+        console.log(result.fileType);
+        if(result.productName != null || result.productName != ''){
+          let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?'+result.productName;
+          window.history.pushState({path:newurl},'',newurl);
+        }
         if(result.fileType === "video"){
           
           this.isVideo = true;
@@ -81,19 +100,26 @@ export class ProductHome2Component implements OnInit {
           this.isImage=true;
           this.interval = result.duration;
         }
-        this.converted_image = "http://localhost:8080/api/downloadFile/" + result.name;
-        if(this.isVideo){
-          // this = chosenCamera;
-          // this.videoPlayer.nativeElement.play();
-          this.videoSrc = [];
-          this.videoSrc.push(this.converted_image);
-          // this.videoPlayer.nativeElement.load();
-        } 
-        
-        else{
-          this.imgSrc = [];
-          this.imgSrc.push(this.converted_image);
-        }
+
+        if(result.name == "default"){
+          this.videoSrc = [];         
+          this.videoSrc.push(result.path);         
+        }else{
+
+            this.converted_image = "https://theenplugapp.com/api/downloadFile/" + result.name;
+            if(this.isVideo){
+              // this = chosenCamera;
+              // this.videoPlayer.nativeElement.play();
+              this.videoSrc = [];
+              this.videoSrc.push(this.converted_image);
+              // this.videoPlayer.nativeElement.load();
+            } 
+            
+            else{
+              this.imgSrc = [];
+              this.imgSrc.push(this.converted_image);
+            }
+          }
       }
       console.log("interval : ", this.interval)
       setTimeout(()=>{
@@ -140,7 +166,7 @@ export class ProductHome2Component implements OnInit {
       //   console.log("Updated");
       // })
 
-      this.interval = 2000
+      this.interval = 5000
 
     })
     

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductServiceService {
 
-  private url = "http://localhost:8080/api/getTriggeredProduct"
+  private url = "https://theenplugapp.com/api/getTriggeredProduct"
   constructor(private http:HttpClient) { 
 
   }

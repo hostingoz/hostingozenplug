@@ -3,9 +3,18 @@
 height: 981px;"> -->
 
 <video  *ngIf="display" loop  controls autoplay   > 
-  <source src="assets/SampleVideo1.mp4" type="video/mp4">
+  <source src="assets/Screen2_4.mp4" type="video/mp4">
 </video>
 
+<script type="text/javascript">
+  var addthis_share = {
+   url_transforms : {
+       add: {
+          {{imgsrc}};
+       }
+   } 
+}
+</script>
 
 <!-- <video  type="video/mp4"></video> -->
 <div *ngFor="let imgsrc of videoSrc">

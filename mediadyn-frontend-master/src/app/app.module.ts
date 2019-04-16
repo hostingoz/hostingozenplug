@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClient,HttpParams } from '@angular/common/http';
 import { AddProductComponent } from './add-product/add-product.component';
 import { MaterialModule } from './material.module';
 import { Routes } from '@angular/router';

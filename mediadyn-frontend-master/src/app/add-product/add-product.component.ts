@@ -35,7 +35,7 @@ export class AddProductComponent implements OnInit {
   formdata.append("file", this.selectedFile);
   formdata.append("productName", this.image.name);
   formdata.append("duration", this.image.duration);
-    this.http.post('http://localhost:8080/api/uploadFile',formdata).subscribe(res=>{
+    this.http.post('https://theenplugapp.com/api/uploadFile',formdata).subscribe(res=>{
       console.log(res);
       },
       err=>{
@@ -46,7 +46,7 @@ export class AddProductComponent implements OnInit {
 
     // Previous code for base 64
     // this.image.img = this.base64textString;
-    // this.http.post('http://localhost:8080/api/trigger/addProduct',this.image).subscribe(res=>{
+    // this.http.post('https://theenplugapp.com/api/trigger/addProduct',this.image).subscribe(res=>{
     //   console.log(res);
     // },
     // err=>{

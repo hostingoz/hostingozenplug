@@ -1,12 +1,5 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  ElementRef
-} from '@angular/core';
-import {
-  HttpClient, HttpParams
-} from '@angular/common/http';
+import {Component,  OnInit, ViewChild, ElementRef } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 
 
@@ -60,13 +53,16 @@ export class ProductHomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+      .register('ngsw-worker.js');
+    }
   }
 
   get() {
 
     let that = this;
-      this.http.get('http://localhost:8080/api/getTriggeredProduct/q1').subscribe(res => {
+      this.http.get('https://theenplugapp.com/api/getTriggeredProduct/q1').subscribe(res => {
       console.log('res', res);
       this.display = false;
       let result = res as any;
@@ -86,7 +82,7 @@ export class ProductHomeComponent implements OnInit {
         this.isImage=false;
         this.interval = 2000;
 
-        this.display = true;
+
       } else {
         console.log(result.fileType);
         if(result.productName != null || result.productName != ''){
@@ -104,7 +100,7 @@ export class ProductHomeComponent implements OnInit {
           this.isImage=true;
           this.interval = result.duration;
         }
-        this.converted_image = "http://localhost:8080/api/downloadFile/" + result.name;
+        this.converted_image = "https://theenplugapp.com/api/downloadFile/" + result.name;
         if(this.isVideo){
           // this = chosenCamera;
           // this.videoPlayer.nativeElement.play();

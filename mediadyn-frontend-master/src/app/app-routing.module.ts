@@ -8,10 +8,12 @@ import { ProductHome3Component } from './product-home3/product-home3.component';
 import { ProductHome4Component } from './product-home4/product-home4.component';
 import { ProductHome5Component } from './product-home5/product-home5.component';
 
+
 const routes: Routes = [
   // { path: '', component: ProductHomeComponent},
   { path: 'addProduct', component: AddProductComponent },
   { path: 'home1', component: ProductHomeComponent},
+  { path: '', component: ProductHomeComponent},
   { path: 'home2', component: ProductHome2Component},
   { path: 'home3', component: ProductHome3Component},
   { path: 'home4', component: ProductHome4Component},
