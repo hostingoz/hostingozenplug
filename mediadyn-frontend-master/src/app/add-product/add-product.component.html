@@ -1,0 +1,26 @@
+
+  <div >
+      <img src="assets/banner1.jpg" width="100%" height="100%">
+  </div>
+
+  <div style="text-align:center ; width:100%; height: 100%;left: 500px;" class="outer-div" >
+      <div class="col-md-4 inner-div  " >
+          <!-- <span class="label label-info info row">Product Name </span> -->
+          
+          <input id="textboxid" autofocus type="text"   [(ngModel)]="image.name" name="name"   #name="ngModel"  
+          placeholder="Enter Product Name" required>
+          <input id="textboxid1"  type="text"   [(ngModel)]="image.duration" name="name"   #name="ngModel"  
+          placeholder="Enter Video Duration in miliseconds " required>
+        <!-- <h2 id="header">Choose File</h2> -->
+        
+        <input 
+        class="row choose"
+         type="file" (change)="onFileChanged($event)" #fileInput>
+        <!-- <button class="row"
+        id="select" (click)="fileInput.click()">Select File</button> -->
+        <button  
+        class="row"
+        id="select" (click)="onUpload()" class="btn btn-primary">Upload!</button>
+      </div>
+  </div>
+  
